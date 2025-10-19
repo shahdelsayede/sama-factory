@@ -1,0 +1,449 @@
+/* إعدادات عامة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* الهيدر */
+header {
+  background-color: #004aad;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* القسم الرئيسي */
+.hero {
+  background-color: #eaf2ff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #004aad;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background-color: #004aad;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #003680;
+}
+
+/* عن المصنع */
+.about {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.about h2 {
+  color: #004aad;
+  margin-bottom: 15px;
+}
+
+/* المنتجات */
+.products {
+  background-color: #f1f5ff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.products h2 {
+  color: #004aad;
+  margin-bottom: 40px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.product {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: transform 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product h3 {
+  color: #004aad;
+  margin-bottom: 10px;
+}
+
+/* تواصل معنا */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.contact h2 {
+  color: #004aad;
+  margin-bottom: 20px;
+}
+
+/* الفوتر */
+footer {
+  background-color: #004aad;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+.product-gallery {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.product-gallery h2 {
+  color: #004aad;
+  margin-bottom: 15px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-gallery img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.image-hover {
+  position: relative;
+  width: 200px;
+  height: 240px;
+}
+
+.image-hover img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: opacity 0.5s;
+}
+
+.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.image-hover:hover .hover-img {
+  opacity: 1;
+}
+
+.image-hover:hover .main-img {
+  opacity: 0;
+}
+/* ---------- توحيد أحجام الصور لكل المنتَجات ---------- */
+
+/* الصندوق العام للصورة داخل الكرت */
+.product, .product-gallery .product {
+  width: 100%;
+  max-width: 220px;    /* عرض كل كرت */
+}
+
+/* لو بتستخدمي شبكة (grid) نخلي العنصر يملأ مساحة الكرت */
+.product img,
+.product-gallery img,
+.image-hover img {
+  width: 100%;
+  height: 250px;         /* ارتفاع ثابت لكل الصور */
+  object-fit: cover;     /* يقص الصورة ويملأ الصندوق بدون تشويه */
+  display: block;
+  border-radius: 10px;
+}
+
+/* بديل عصري: لو حابة تعتمد على نسبة (يحافظ على تناسب الصورة على الشاشات) */
+.product .image-box,
+.product-gallery .image-box {
+  width: 100%;
+  aspect-ratio: 4 / 5;   /* نسبة عرض/ارتفاع ثابتة بدل الheight الثابت */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.product .image-box img,
+.product-gallery .image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* لو عندك زوج صور للـ hover: خليهُم متطابقين */
+.image-hover {
+  position: relative;
+  width: 100%;
+  height: 250px;         /* نفس ارتفاع الصور أعلاه */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-hover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.image-hover .hover-img {
+  opacity: 0;
+}
+
+.image-hover:hover .hover-img {
+  opacity: 1;
+}
+
+.image-hover:hover .main-img {
+  opacity: 0;
+}
+
+/* تصغير الارتفاع على الموبايل */
+@media (max-width: 768px) {
+  .product img,
+  .product-gallery img,
+  .image-hover { height: 180px; }
+  .product .image-box,
+  .product-gallery .image-box { aspect-ratio: 3 / 4; }
+}
+
+      body {
+        font-family: "Cairo", sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #004b8d;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav a.active {
+        text-decoration: underline;
+      }
+
+      .products {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .products h2 {
+        color: #004b8d;
+        margin-bottom: 30px;
+      }
+
+      .product {
+        display: inline-block;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin: 15px;
+        padding: 15px;
+        width: 250px;
+        vertical-align: top;
+        position: relative;
+      }
+
+      .product img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .image-hover {
+        position: relative;
+      }
+
+      .hover-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .image-hover:hover .hover-img {
+        opacity: 1;
+      }
+
+      .product h3 {
+        margin: 10px 0 5px;
+        color: #333;
+      }
+
+      .product p {
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #004b8d;
+        font-size: 16px;
+      }
+
+      .product-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        justify-items: center;
+        margin-top: 30px;
+      }
+
+      .product-gallery .product {
+        width: 220px;
+      }
+
+      .product-gallery img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .product-gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      footer {
+        background-color: #004b8d;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+      }
+    
